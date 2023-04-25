@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create a new crop</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+  <div class="container">
+    <div class="disclaimer-banner">
+    <p>This app is not a professional agronomics service and should not be used without consultation of a professional agronomist. We are not liable for any crop failure.</p>
+</div>
+    <form method='post'>
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="{{ form.crop.id_for_label }}">Crop:</label>
+        {{ form.crop }}
+      </div>
+      <div class="form-group">
+        <label for="{{ form.postal_code.id_for_label }}">Postal Code:</label>
+        {{ form.postal_code }}
+      </div>
+      <div class="form-group">
+        <label for="{{ form.soil_type.id_for_label }}">Soil Type:</label>
+        {{ form.soil_type }}
+      </div>
+      <div class="form-group">
+        <label for="{{ form.soil_pH_level.id_for_label }}">Soil pH Level:</label>
+        {{ form.soil_pH_level }}
+        </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form> 
+
+  <!-- Logic for rendering SOP in a list -->
+ {% if sop %}
+      <h3>Standard Operating Procedure for {% if form.crop.value %}{{ form.crop.value }}{% endif %} in {% if form.postal_code.value %}{{ form.postal_code.value }}{% endif %}</h3>
+
+    {% if form.soil_type.value and form.soil_pH_level.value %}
+        <p>Soil Type: {{ form.soil_type.value }}, Soil pH Level: {{ form.soil_pH_level.value }}</p>
+    {% endif %}
+    <ol class="sop">
+        {% for step in sop %}
+            <li>{{ step|safe }}</li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+
+
+
+
+
+
+
+
+  </div>
+</body>
+</html>
