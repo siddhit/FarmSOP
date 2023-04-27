@@ -215,6 +215,34 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
+name = "geographiclib"
+version = "2.0"
+description = "The geodesic routines from GeographicLib"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
+name = "geopy"
+version = "2.3.0"
+description = "Python Geocoding Toolbox"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+geographiclib = ">=1.52,<3"
+
+[package.extras]
+aiohttp = ["aiohttp"]
+dev = ["coverage", "flake8 (>=5.0,<5.1)", "isort (>=5.10.0,<5.11.0)", "pytest-asyncio (>=0.17)", "pytest (>=3.10)", "readme-renderer", "sphinx-issues", "sphinx (<=4.3.2)", "sphinx-rtd-theme (>=0.5.0)"]
+dev-docs = ["readme-renderer", "sphinx (<=4.3.2)", "sphinx-issues", "sphinx-rtd-theme (>=0.5.0)"]
+dev-lint = ["flake8 (>=5.0,<5.1)", "isort (>=5.10.0,<5.11.0)"]
+dev-test = ["coverage", "pytest-asyncio (>=0.17)", "pytest (>=3.10)", "sphinx (<=4.3.2)"]
+requests = ["urllib3 (>=1.24.2)", "requests (>=2.16.2)"]
+timezone = ["pytz"]
+
+[[package]]
 name = "idna"
 version = "3.4"
 description = "Internationalized Domain Names in Applications (IDNA)"
@@ -703,7 +731,7 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.10.0,<3.11"
-content-hash = "46247b06dc5f846b5057ab72d41a08bc39e44e41283c2605bbb28919d0b1c919"
+content-hash = "e4db6120bba94ff217837bd93627d396b76f759856ee51f100e0dbb64c0c3c96"
 
 [metadata.files]
 aiohttp = []
@@ -723,6 +751,8 @@ debugpy = []
 django = []
 flask = []
 frozenlist = []
+geographiclib = []
+geopy = []
 idna = []
 iso8601 = []
 itsdangerous = []

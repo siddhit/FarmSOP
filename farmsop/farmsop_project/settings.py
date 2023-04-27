@@ -28,14 +28,14 @@ SECRET_KEY = 'django-insecure-&^)l81se=16q&n^)ezhsq!zd%ys#vu55h4zlj1c6k)etrfcsxh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['farmsop.siddhit.repl.co', '5617ea02-05c8-45de-971c-4459e00bb5a6.id.repl.co', '5617ea02-05c8-45de-971c-4459e00bb5a6.id.repl.co']
+ALLOWED_HOSTS = ['farmsop.siddhit.repl.co', '5617ea02-05c8-45de-971c-4459e00bb5a6.id.repl.co', '10.30.0.100:16570']
 
 # Application definition
 
 INSTALLED_APPS = [
   'django.contrib.admin', 'django.contrib.auth',       
   'django.contrib.contenttypes', 'corsheaders',
-  'django.contrib.sessions', 'django.contrib.messages',
+  'django.contrib.sessions', 'django.contrib.messages', 'rest_framework',
   'django.contrib.staticfiles', 'farmsop_app'
 ]
 
